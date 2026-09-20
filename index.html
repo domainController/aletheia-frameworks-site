@@ -22,28 +22,120 @@
     <h1>Aletheia Frameworks</h1>
     <div class="branch-desc">Théorie et pratique autour de la construction de soi et de l'interaction sociale.</div>
 
-    <div class="children">
-      <div class="child"><a href="soi/index.html">Soi</a> <span class="status-tag status-concept">concept</span><div class="child-desc">Une boussole pour se construire, au quotidien.</div></div>
-      <div class="child"><a href="plan-symbolique/index.html">Plan Symbolique</a> <span class="status-tag status-draft">draft</span><div class="child-desc">Interactionnisme symbolique, puisant dans la sociologie et l'anthropologie du quotidien.</div></div>
-      <div class="child"><a href="csm/index.html">Cercle de Survie Minimale</a> <span class="status-tag status-concept">concept</span><div class="child-desc">Statut indécis — pratique ou biographie, pas encore théorie.</div></div>
+    <!-- ============================================= -->
+    <!-- FAMILLE 1 : LE PLATEAU                         -->
+    <!-- ============================================= -->
+    <div class="family">
+      <h2 class="family-title">Le Plateau</h2>
+      <div class="children">
+        <div class="child">
+          <a href="soi/index.html">Soi</a>
+          <span class="status-tag status-concept">concept</span>
+          <div class="child-desc">Le centre intime, la continuité de soi.</div>
+        </div>
+        <div class="child">
+          <a href="moi-symbolique/index.html">Moi symbolique</a>
+          <span class="status-tag status-draft">draft</span>
+          <div class="child-desc">L'interface sociale, le rôle, le masque.</div>
+        </div>
+        <div class="child">
+          <a href="theatre-normatif/index.html">Théâtre normatif</a>
+          <span class="status-tag status-concept">concept</span>
+          <div class="child-desc">La scène et les scripts implicites.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="family-separator"></div>
+
+    <!-- ============================================= -->
+    <!-- FAMILLE 2 : LES ORDONNANCEMENTS                -->
+    <!-- ============================================= -->
+    <div class="family">
+      <h2 class="family-title">Les Ordonnancements</h2>
+      <div class="children">
+        <div class="child">
+          <a href="orthonormation/index.html">Orthonormation</a>
+          <span class="status-tag status-concept">concept</span>
+          <div class="child-desc">L'intériorisation normative.</div>
+        </div>
+        <div class="child">
+          <a href="police-interpersonnelle/index.html">Police interpersonnelle</a>
+          <span class="status-tag status-concept">concept</span>
+          <div class="child-desc">Le contrôle social intériorisé.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="family-separator"></div>
+
+    <!-- ============================================= -->
+    <!-- FAMILLE 3 : LA PHÉNOMÉNOLOGIE DE L'EXPÉRIENCE  -->
+    <!-- ============================================= -->
+    <div class="family">
+      <h2 class="family-title">La Phénoménologie de l'Expérience</h2>
+      <div class="children">
+        <div class="child">
+          <a href="regime-accomplissement/index.html">Régime d'accomplissement</a>
+          <span class="status-tag status-concept">concept</span>
+          <div class="child-desc">Les rails de l'accomplissement, la trajectoire de vie.</div>
+        </div>
+        <div class="child">
+          <a href="gnose/index.html">Gnose</a>
+          <span class="status-tag status-concept">concept</span>
+          <div class="child-desc">La lecture des structures.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="family-separator"></div>
+
+    <!-- ============================================= -->
+    <!-- PRATIQUES (annexe)                             -->
+    <!-- ============================================= -->
+    <div class="family">
+      <h2 class="family-title">Pratiques</h2>
+      <div class="children">
+        <div class="child">
+          <a href="csm/index.html">Cercle de Survie Minimale</a>
+          <span class="status-tag status-concept">concept</span>
+          <div class="child-desc">Statut indécis — pratique ou biographie, pas encore théorie.</div>
+        </div>
+      </div>
     </div>
 
   </div>
-<script>
-(function () {
-  var el = document.getElementById('last-updated');
-  if (!el) return;
-  var path = 'index.html';
-  fetch('https://api.github.com/repos/domainController/aletheia-frameworks-site/commits?path=' + encodeURIComponent(path) + '&per_page=1')
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      if (!data || !data[0]) return;
-      var d = new Date(data[0].commit.committer.date);
-      var opts = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-      el.textContent = 'Mis à jour ' + d.toLocaleString('fr-FR', opts);
-    })
-    .catch(function () { });
-})();
-</script>
+
+  <!-- Séparateurs visuels : à styliser dans style.css -->
+  <style>
+    .family-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #c9d1e0;
+      margin: 1.5rem 0 0.5rem 0;
+      letter-spacing: 0.02em;
+    }
+    .family-separator {
+      margin: 1.5rem 0;
+      border-top: 1px solid #2a3040;
+    }
+  </style>
+
+  <script>
+  (function () {
+    var el = document.getElementById('last-updated');
+    if (!el) return;
+    var path = 'index.html';
+    fetch('https://api.github.com/repos/domainController/aletheia-frameworks-site/commits?path=' + encodeURIComponent(path) + '&per_page=1')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (!data || !data[0]) return;
+        var d = new Date(data[0].commit.committer.date);
+        var opts = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        el.textContent = 'Mis à jour ' + d.toLocaleString('fr-FR', opts);
+      })
+      .catch(function () { });
+  })();
+  </script>
 </body>
 </html>
