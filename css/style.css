@@ -36,7 +36,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 10px 16px;
-  font-size: 0.94em;
+  font-size: clamp(0.82em, calc(0.712em + 0.03vw), 0.94em);
   color: #7a8296;
   border-bottom: 1px solid #1e2340;
   padding-bottom: 18px;
@@ -53,7 +53,7 @@ body {
 .meta-bar span.sep { color: #33395c; }
 
 h1 {
-  font-size: 1.95em;
+  font-size: clamp(1.7em, calc(1.475em + 0.0625vw), 1.95em);
   color: #fff;
   margin-bottom: 12px;
   font-weight: 700;
@@ -61,18 +61,18 @@ h1 {
 
 h2 {
   color: var(--ref-subtitle);
-  font-size: 1.32em;
+  font-size: clamp(1.15em, calc(0.997em + 0.0425vw), 1.32em);
   margin: 36px 0 14px;
 }
 
 .subtitle {
   color: #7a8296;
   margin-bottom: 44px;
-  font-size: 1.09em;
+  font-size: clamp(0.95em, calc(0.824em + 0.035vw), 1.09em);
 }
 
 .exec-def {
-  font-size: 1.26em;
+  font-size: clamp(1.1em, calc(0.956em + 0.04vw), 1.26em);
   color: #f0f0f5;
   border-left: 3px solid #4a90e2;
   padding-left: 20px;
@@ -112,7 +112,7 @@ p { margin-bottom: 20px; color: var(--ref-text); }
 
 .branch-title {
   color: #fff;
-  font-size: 1.21em;
+  font-size: clamp(1.05em, calc(0.906em + 0.04vw), 1.21em);
   font-weight: 600;
   margin-bottom: 4px;
 }
@@ -141,7 +141,7 @@ details[open] > summary.branch-title::before {
 
 .branch-desc {
   color: #8a90a8;
-  font-size: 1.01em;
+  font-size: clamp(0.88em, calc(0.763em + 0.0325vw), 1.01em);
   margin-bottom: 10px;
 }
 
@@ -153,17 +153,17 @@ details[open] > summary.branch-title::before {
 
 .child {
   padding: 6px 0;
-  font-size: 1.06em;
+  font-size: clamp(0.92em, calc(0.794em + 0.035vw), 1.06em);
 }
 .child a { color: #b8bcd8; text-decoration: none; }
 .child a:visited { color: #b8bcd8; }
 .child a:hover { color: #4a90e2; text-decoration: underline; }
-.child .note { color: #5a6080; font-size: 0.98em; margin-left: 8px; }
-.child-desc { color: #5a6080; font-size: 0.98em; margin-top: 3px; }
+.child .note { color: #5a6080; font-size: clamp(0.85em, calc(0.733em + 0.0325vw), 0.98em); margin-left: 8px; }
+.child-desc { color: #5a6080; font-size: clamp(0.85em, calc(0.733em + 0.0325vw), 0.98em); margin-top: 3px; }
 
 .status-tag {
   display: inline-block;
-  font-size: 0.83em;
+  font-size: clamp(0.72em, calc(0.621em + 0.0275vw), 0.83em);
   padding: 1px 7px;
   border-radius: 3px;
   margin-left: 8px;
@@ -199,7 +199,7 @@ a.link-external:visited { color: #6bcf7f; }
 a.link-external:hover { color: #8fe89f; }
 a.link-external::after {
   content: " ↗";
-  font-size: 0.98em;
+  font-size: clamp(0.85em, calc(0.733em + 0.0325vw), 0.98em);
 }
 
 .lang-switch {
@@ -208,7 +208,7 @@ a.link-external::after {
   align-items: center;
 }
 .lang-switch a {
-  font-size: 0.9em;
+  font-size: clamp(0.78em, calc(0.672em + 0.03vw), 0.9em);
   font-family: 'SF Mono', Consolas, monospace;
   color: #7a8296;
   text-decoration: none;
@@ -224,14 +224,14 @@ a.link-external::after {
   margin-top: 40px;
   color: #4a90e2;
   text-decoration: none;
-  font-size: 1.03em;
+  font-size: clamp(0.9em, calc(0.783em + 0.0325vw), 1.03em);
 }
 .back-link:visited { color: #4a90e2; }
 .back-link:hover { text-decoration: underline; }
 
 .frontmatter {
   font-family: 'SF Mono', Consolas, monospace;
-  font-size: 0.98em;
+  font-size: clamp(0.85em, calc(0.733em + 0.0325vw), 0.98em);
   margin-bottom: 40px;
 }
 .fm-row {
@@ -262,14 +262,18 @@ a.link-external::after {
 
 .placeholder-message {
   color: #8a90a8;
-  font-size: 1.21em;
+  font-size: clamp(1.05em, calc(0.906em + 0.04vw), 1.21em);
   margin-top: 24px;
 }
 
 
 /* ---- Nav home icon + back-link (replaces bottom back-link + static "Portfolio" label) ---- */
 
-.home-icon { color: #7a8296; text-decoration: none; font-size: 1.21em; line-height: 1; }
+.home-icon { color: #7a8296; text-decoration: none; font-size: clamp(1.05em, calc(0.906em + 0.04vw), 1.21em); line-height: 1; }
 .home-icon:hover { color: #4a90e2; }
-.home-icon-active { color: #4a90e2; font-size: 1.21em; line-height: 1; }
+.home-icon-active { color: #4a90e2; font-size: clamp(1.05em, calc(0.906em + 0.04vw), 1.21em); line-height: 1; }
 .nav-back { color: #4a90e2; text-decoration: none; }
+
+/* ---- Cross-site links (portfolio / blog / doctrine) ---- */
+.site-link { color: #4a90e2; text-decoration: none; }
+.site-link:hover { text-decoration: underline; }
