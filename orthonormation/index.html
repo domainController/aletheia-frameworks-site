@@ -5,16 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Orthonormation — Aletheia Frameworks</title>
 <link rel="stylesheet" href="../css/style.css">
-<script src="../meta.js" defer></script>
 </head>
 <body>
 <div class="container">
 
   <div class="meta-bar">
     <div class="meta-left">
-      <span class="home-icon-active" title="Accueil">&#8962;</span>
+      <a class="home-icon" href="../index.html" title="Accueil">&#8962;</a>
       <span class="sep">·</span>
-      <span style="color:#7a8296;">orthonormation</span>
+      <a class="nav-back" href="../index.html">Aletheia Frameworks</a>
       <span class="sep">·</span>
       <span id="last-updated">Mis à jour —</span>
     </div>
@@ -43,5 +42,21 @@
   </div>
 
 </div>
+<script>
+(function () {
+  var el = document.getElementById('last-updated');
+  if (!el) return;
+  var path = 'orthonormation/index.html';
+  fetch('https://api.github.com/repos/domainController/aletheia-frameworks-site/commits?path=' + encodeURIComponent(path) + '&per_page=1')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (!data || !data[0]) return;
+      var d = new Date(data[0].commit.committer.date);
+      var opts = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+      el.textContent = 'Mis à jour ' + d.toLocaleString('fr-FR', opts);
+    })
+    .catch(function () { });
+})();
+</script>
 </body>
 </html>
