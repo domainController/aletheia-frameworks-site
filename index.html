@@ -27,10 +27,8 @@
     <div class="meta-bar">
       <span class="home-icon-active" title="Accueil">&#8962;</span>
       <div class="meta-right">
-        <span id="last-updated">Update —</span>
-        <span class="sep">·</span>
+        <span id="last-updated">Mis à jour —</span>
         <a class="site-link" href="https://patricek.info">portfolio</a>
-        <span class="sep">·</span>
         <a class="site-link" href="https://offcityhike.blog">blog</a>
       </div>
     </div>
@@ -116,10 +114,8 @@
       .then(function (data) {
         if (!data || !data[0]) return;
         var d = new Date(data[0].commit.committer.date);
-        var mois = ['Jan', 'Fév', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc'];
-        var hh = ('0' + d.getHours()).slice(-2);
-        var mm = ('0' + d.getMinutes()).slice(-2);
-        el.textContent = 'Update ' + d.getDate() + ' ' + mois[d.getMonth()] + "'" + String(d.getFullYear()).slice(-2) + ', ' + hh + ':' + mm;
+        var opts = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        el.textContent = 'Mis à jour ' + d.toLocaleString('fr-FR', opts);
       })
       .catch(function () { });
   })();
