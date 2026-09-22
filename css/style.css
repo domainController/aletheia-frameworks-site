@@ -276,6 +276,12 @@ a.link-external::after {
 .home-icon-active { color: #4a90e2; font-size: clamp(1.05em, calc(0.978em + 0.02vw), 1.13em); line-height: 1; }
 .nav-back { color: #4a90e2; text-decoration: none; }
 
+/* ---- Portfolio anchor (right-aligned, distinct from the left home-icon-active
+   which points at this site's own home) — violet to match link-internal,
+   not the blue used for this site's own home/nav-back/site-link. ---- */
+.home-icon-right { color: #a888d0; text-decoration: none; font-size: clamp(1.05em, calc(0.978em + 0.02vw), 1.13em); line-height: 1; }
+.home-icon-right:hover { text-decoration: underline; }
+
 /* ---- Cross-site links (portfolio / blog / doctrine) ---- */
 .site-link { color: #4a90e2; text-decoration: none; }
 .site-link:hover { text-decoration: underline; }
