@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sociosomatique — Aletheia Frameworks</title>
+<title>Pratiques de régulation — Aletheia Frameworks</title>
 <link rel="stylesheet" href="../css/style.css?v=2">
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-jCwkozSfpXxIYcKL6kehB.js"></script>
@@ -21,43 +21,20 @@
       <span class="sep">·</span>
       <a class="nav-back" href="../index.html">Aletheia Frameworks</a>
       <span class="sep">·</span>
+      <a class="nav-back" href="../sociosomatique/index.html">Sociosomatique</a>
+      <span class="sep">·</span>
       <span id="last-updated">Mis à jour —</span>
     </div>
   </div>
 
-  <h1>Sociosomatique</h1>
-  <div class="branch-desc">Le vecteur transversal, physiologique et esthétique qui agit sur tout le monde — le substrat derrière l'existentiel.</div>
+  <h1>Pratiques de régulation</h1>
+  <div class="branch-desc">Sport, compléments, jeûne, sommeil, lumière.</div>
 
   <div class="children">
     <div class="child">
-      Médiation somatique
-      <span class="status-tag status-draft">draft</span>
-      <div class="child-desc">Le corps comme terrain de l'agir social.</div>
-    </div>
-    <div class="child">
-      Variable esthétique
-      <span class="status-tag status-draft">draft</span>
-      <div class="child-desc">Morphologie, beauté, stigmate, capital symbolique.</div>
-    </div>
-   <div class="child">
-  <a href="/pratiques-de-regulation/index.html">Pratiques de régulation</a>
-  <span class="status-tag status-draft">draft</span>
-  <div class="child-desc">Sport, compléments, jeûne, sommeil, lumière.</div>
-    </div>
-    <div class="child">
-      Transition &amp; vieillissement
-      <span class="status-tag status-draft">draft</span>
-      <div class="child-desc">Hormones, milieu de vie, ménopause, andropause, longévité.</div>
-    </div>
-    <div class="child">
-      Mouvements culturels
-      <span class="status-tag status-draft">draft</span>
-      <div class="child-desc">Keto, carnivore, CrossFit, run clubs, fitness YouTube.</div>
-    </div>
-    <div class="child">
-      Régimes de substances
-      <span class="status-tag status-draft">draft</span>
-      <div class="child-desc">Alcool, caféine, tabac, cannabis, cocaïne, et la gestion du réel.</div>
+      <a href="/projet-somatique/index.html">Projet Somatic Log</a>
+      <span class="status-tag status-concept">concept</span>
+      <div class="child-desc">Journal de recherche sur les gonflements faciaux d'origine neuro-immunitaire.</div>
     </div>
   </div>
 
@@ -66,7 +43,7 @@
 (function () {
   var el = document.getElementById('last-updated');
   if (!el) return;
-  var path = 'sociosomatique/index.html';
+  var path = 'pratiques-de-regulation/index.html';
   fetch('https://api.github.com/repos/domainController/aletheia-frameworks-site/commits?path=' + encodeURIComponent(path) + '&per_page=1')
     .then(function (r) { return r.json(); })
     .then(function (data) {
